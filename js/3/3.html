@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      height: 100vh; 
+      margin: 0;
+      display: flex; 
+      justify-content: center;
+      align-items: center; 
+    }
+    .container {
+      border: 1px solid #000;
+      padding: 20px;
+      width: 320px;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 5px;
+    }
+    input{
+    width: 302px;
+    height: 29px;
+    }
+    button{
+        width: 100%;
+        background-color: rgb(18, 176, 255);
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+    }
+    .output {
+      margin-top: 15px;
+      white-space: pre-line;
+      font-family: monospace;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Multiplication Table Generator</h3>
+     <div class="info">
+      <b>Name:</b> Yedhukrishna a.m <br>
+      <b>Reg No:</b> NMAXSCS030
+    </div><br>
+    <label>Enter a number:</label><br>
+    <input type="number" id="num" placeholder="Enter number"><br><br>
+    <label>Enter limit:</label><br>
+    <input type="number" id="limit" placeholder="Enter limit"><br>
+    <button onclick="generateTable()">Generate</button>
+    
+    <div class="output" id="result"></div>
+    
+   
+  </div>
+
+  <script>
+    function generateTable() {
+      let n = parseInt(document.getElementById("num").value);
+      let limit = parseInt(document.getElementById("limit").value);
+      let output = "";
+
+      if (isNaN(n) || isNaN(limit) || n <= 0 || limit <= 0) {
+        document.getElementById("result").innerText = "Please enter valid positive numbers.";
+        return;
+      }
+
+      for (let i = 1; i <= limit; i++) {
+        output += n + " × " + i + " = " + (n * i) + "\n";
+      }
+
+      document.getElementById("result").innerText = output;
+    }
+  </script>
+</body>
+</html>

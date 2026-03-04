@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Color Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+      
+      margin-top: 210px;
+      transition: background-color 0.5s ease;
+    }
+    .container {
+      
+      padding: 20px;
+      width: 300px;
+      
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px;
+      cursor: pointer;
+      
+    }
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Change Background Color</h3>
+    <div class="info">
+      <b>Name:</b> Yedhukrishna a.m <br>
+      <b>Reg No:</b> NMAXSCS030
+    </div>
+    <button onclick="changeColor()">Change Color</button>
+    
+    
+  </div>
+
+  <script>
+    let colors = ["lightblue", "lightgreen", "lightpink", "lightyellow", "lavender", "peachpuff"];
+    let index = 0;
+
+    function changeColor() {
+      document.body.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length; // cycle through array
+    }
+  </script>
+</body>
+</html>

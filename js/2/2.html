@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfect, Abundant or Deficient</title>
+  <style>
+    body {
+       font-family: Arial, sans-serif;
+      margin: 40px;
+      height: 100vh; 
+      margin: 0;
+      display: flex; 
+      justify-content: center;
+      align-items: center; 
+    }
+    .container {
+      border: 1px solid #000;
+      padding: 20px;
+      width: 300px;
+    }
+    
+    input, button {
+      margin-top: 10px;
+      padding: 5px;
+      width: 286px;
+      height: 35px;
+      
+    }
+    button{
+        background-color: rgb(255, 91, 9);
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        width: 100%;
+    }
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Check Number Type</h3>
+    <div class="info">
+      <b>Name:</b> Yedhukrishna a.m <br>
+      <b>Reg No:</b> NMAXSCS030
+    </div> <br>
+    <label>Enter a number:</label><br>
+    <input type="number" id="num" placeholder="Enter number"><br>
+    <button onclick="checkNumber()">Check</button>
+    
+  </div>
+
+  <script>
+    function checkNumber() {
+      let n = parseInt(document.getElementById("num").value);
+      if (isNaN(n) || n <= 0) {
+        alert("Please enter a positive number.");
+        return;
+      }
+
+      let sum = 0;
+      for (let i = 1; i <= n / 2; i++) {
+        if (n % i === 0) {
+          sum += i;
+        }
+      }
+
+      if (sum === n) {
+        alert(n + " is a Perfect number.");
+      } else if (sum > n) {
+        alert(n + " is an Abundant number.");
+      } else {
+        alert(n + " is a Deficient number.");
+      }
+    }
+  </script>
+</body>
+</html>

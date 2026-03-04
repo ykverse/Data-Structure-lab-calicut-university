@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palindrome Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      margin-top: 150px;
+      padding: 20px;
+      width: 300px;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 5px;
+    }
+
+    input{
+        width: 286px;
+       height: 31px;
+    }
+    button{
+        width: 100%;
+        background-color: rgb(18, 176, 255);
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+  
+  
+    }
+   
+    .output {
+      margin-top: 15px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+    }
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Palindrome Checker</h3>
+    <div class="info">
+      <b>Name:</b> Yedhukrishna a.m <br>
+      <b>Reg No:</b> NMAXSCS030
+    </div><br>
+    <label>Enter a string:</label><br>
+    <input type="text" id="text"><br>
+    <button onclick="checkPalindrome()">Check</button>
+    <div class="output" id="result"></div>
+
+    
+  </div>
+
+  <script>
+    function checkPalindrome() {
+      let str = document.getElementById("text").value;
+      
+
+      
+      let cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+      let reversed = cleaned.split("").reverse().join("");
+
+      if (cleaned === reversed) {
+        document.getElementById("result").innerText = `"${str}" is a Palindrome `;
+      } else {
+        document.getElementById("result").innerText = `"${str}" is NOT a Palindrome `;
+      }
+    }
+  </script>
+</body>
+</html>

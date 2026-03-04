@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Textbox Color Change</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      
+      padding: 20px;
+      width: 320px;
+      margin-top: 200px;
+
+    }
+    input {
+      padding: 8px;
+      width: 90%;
+      height: 30px;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Textbox Color Change</h3>
+
+    <div class="info">
+      <b>Name:</b> Yedhukrishna a.m <br>
+      <b>Reg No:</b> NMAXSCS030
+    </div><br>
+    <input type="text" id="myText" placeholder="Type something..."
+           onfocus="changeFocus(this)" onblur="changeBlur(this)">
+
+    
+  </div>
+
+  <script>
+    function changeFocus(el) {
+      el.style.backgroundColor = "#c3ff00";
+      el.style.color = "#ff0073";
+    }
+
+    function changeBlur(el) {
+      el.style.backgroundColor = "#00eaff";
+      el.style.color = "rgb(35 0 255)";
+    }
+  </script>
+</body>
+</html>
+

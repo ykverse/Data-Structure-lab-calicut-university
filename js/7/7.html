@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Sum</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      
+      padding: 20px;
+      width: 320px;
+      margin-top: 100px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px;
+      cursor: pointer;
+      width: 100%;
+      background-color: rgb(18, 176, 255);
+      border: none;
+      border-radius: 5px;
+      height: 50px;
+    }
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Array Sum Calculator</h3>
+    <div class="info">
+      <b>Name:</b> Yedhukrishna a.m <br>
+      <b>Reg No:</b> NMAXSCS030
+    </div><br>
+    <button onclick="createArray()">Enter Values</button>
+
+    
+  </div>
+
+  <script>
+    function createArray() {
+      let n = parseInt(prompt("How many elements in the array?"));
+      if (isNaN(n) || n <= 0) {
+        alert("Please enter a valid positive number.");
+        return;
+      }
+
+      let arr = [];
+      let sum = 0;
+
+      for (let i = 0; i < n; i++) {
+        let val = parseFloat(prompt("Enter element " + (i + 1) + ":"));
+        if (isNaN(val)) {
+          alert("Invalid number entered. Taking it as 0.");
+          val = 0;
+        }
+        arr.push(val);
+        sum += val;
+      }
+
+      alert("Array: " + arr.join(", ") + "\nSum of elements: " + sum);
+    }
+  </script>
+</body>
+</html>

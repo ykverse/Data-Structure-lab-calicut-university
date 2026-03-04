@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      margin-top: 150px;
+      padding: 20px;
+      width: 340px;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 6px;
+      width: 95%;
+      height: 30px;
+    }
+    button{
+         width: 100%;
+      background-color: rgb(18, 176, 255);
+      border: none;
+      border-radius: 5px;
+      height: 50px;
+    }
+    .output {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .info {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Password Validation</h3>
+    <div class="info">
+      <b>Name:</b> Yedhukrishna a.m <br>
+      <b>Reg No:</b> NMAXSCS030
+    </div><br>
+    <label>Enter Password:</label><br>
+    <input type="password" id="pass"><br><br>
+    
+    <label>Confirm Password:</label><br>
+    <input type="password" id="cpass"><br>
+    
+    <button onclick="validatePassword()">Validate</button>
+    
+    <div class="output" id="result"></div>
+
+    
+  </div>
+
+  <script>
+    function validatePassword() {
+      let pass = document.getElementById("pass").value;
+      let cpass = document.getElementById("cpass").value;
+      let result = document.getElementById("result");
+
+      if (pass.length <= 8) {
+        result.style.color = "red";
+        result.innerText = " Password must be greater than 8 characters.";
+      } else if (pass !== cpass) {
+        result.style.color = "red";
+        result.innerText = "Password and Confirm Password do not match.";
+      } else {
+        result.style.color = "green";
+        result.innerText = "Password is valid.";
+      }
+    }
+  </script>
+</body>
+</html>
